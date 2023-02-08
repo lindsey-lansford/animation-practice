@@ -1,0 +1,36 @@
+.parent {
+  background-color: hsla(200, 100%, 20%);
+  height: 400px;
+  width: 400px;
+}
+
+.child {
+  background-color: red;
+  height: 50%;
+  width: 50%;
+  /* transition: transform 1s ease-in; */
+  /* 1s=the length of the animation/ cubic-bezier came from the 'ease-in-out' when you inspect and customize the break point/ 3s=the delay of the animation */
+  /* transition: transform 1s cubic-bezier(0.42, 0, 0.63, 1.57) 2s; */
+}
+
+.parent:hover .child {
+  /* transform: translateX(100%); */
+  animation: left-to-right 1s ease-in forwards 3 alternate;
+}
+/* keyframes (kind of like media query) it lets you define your animation that you made (under :hover) */
+@keyframes left-to-right {
+  0% {
+    background-color: aqua;
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateY(100%);
+  }
+  66% {
+    transform: translateX(100%) translateY(100%);
+  }
+  100% {
+    background-color: coral;
+    transform: translateX(100%);
+  }
+}
